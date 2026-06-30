@@ -1,5 +1,5 @@
-import { HotelExplorer } from "@/components/HotelExplorer";
+import { HotelOfficialSite } from "@/components/HotelOfficialSite";
 
 export default function Home() {
-  return <HotelExplorer />;
+  return <HotelOfficialSite />;
 }

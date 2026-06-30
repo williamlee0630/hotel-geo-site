@@ -23,11 +23,3 @@ input,
 select {
   font: inherit;
 }
-
-.map-surface {
-  background:
-    linear-gradient(90deg, rgba(20, 184, 166, 0.12) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(20, 184, 166, 0.12) 1px, transparent 1px),
-    linear-gradient(135deg, #eef7f3 0%, #f8fbff 46%, #fff7ed 100%);
-  background-size: 42px 42px, 42px 42px, auto;
-}
