@@ -72,7 +72,7 @@ export default function HomePage() {
             {siteConfig.hotelName}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-9 text-zinc-100 md:text-xl">
-            {siteConfig.tagline}。本網站以 GEO / SEO 友善為目標，示範飯店官網如何清楚整理位置、房型、設施與常見問題。
+            {siteConfig.tagline}。本網站為示範飯店官網如何清楚整理位置、房型、設施與常見問題。
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
