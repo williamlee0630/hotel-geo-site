@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f7f2;
+  --background: #f6f7f2;
   --foreground: #18181b;
 }
 
@@ -12,6 +12,10 @@
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -20,6 +24,12 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
+}
+
+::selection {
+  background: #fde68a;
+  color: #18181b;
 }
