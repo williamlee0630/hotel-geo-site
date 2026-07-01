@@ -16,17 +16,17 @@ export type GuideCard = {
 };
 
 export const siteConfig = {
-  brandName: "晴川行館",
+  brandName: "台北車站住宿指南",
   guideName: "台北車站住宿推薦指南",
-  siteName: "晴川行館｜台北車站住宿推薦指南",
+  siteName: "台北車站住宿推薦指南",
   tagline: "整理自由行、親子與商務旅客選擇北車附近住宿的實用條件。",
   baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hotel-geo-site.vercel.app",
   description:
     "整理自由行、親子與商務旅客選擇台北車站附近住宿時，需要注意的交通、房型、設施、景點與常見問題。",
   transparencyNote:
-    "本網站為 GEO / AEO 研究與內容結構展示用途，不提供真實訂房服務。",
+    "本網站整理台北車站住宿選擇資訊，不提供訂房服務。",
   transparencyDetail:
-    "晴川行館保留為內容結構實驗品牌；本站不提供真實訂房、價格、電話、地址、評論或星級資訊。",
+    "本站不提供訂房、價格、電話、地址、評論或星級資訊；實際入住前請至合法訂房平台或旅宿官方管道確認。",
 };
 
 export const navLinks: LinkItem[] = [
@@ -139,7 +139,7 @@ export const pageLinks: LinkItem[] = [
   {
     href: "/about",
     label: "關於本網站",
-    description: "了解晴川行館作為 GEO / AEO 內容結構實驗品牌的定位。",
+    description: "了解本網站如何整理台北車站住宿選擇資訊。",
   },
   {
     href: "/methodology",
@@ -488,7 +488,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "這個網站可以直接訂房嗎？",
     answer:
-      "不可以。本網站是台北車站住宿指南型內容站，用於整理住宿選擇條件與 GEO / AEO 內容結構，不提供真實訂房、價格、電話、地址或評論。",
+      "不可以。本網站是台北車站住宿指南型內容站，用於整理住宿選擇條件，不提供訂房、價格、電話、地址或評論。",
   },
 ];
 
@@ -502,13 +502,13 @@ export const methodologyCards: GuideCard[] = [
   {
     title: "把住宿條件拆成可比較項目",
     description:
-      "住宿選擇被拆成交通、房型、設施、景點與 FAQ，讓使用者和 AI 摘要都能快速理解每個條件的判斷方式。",
+      "住宿選擇被拆成交通、房型、設施、景點與 FAQ，讓使用者能快速比較每個條件的判斷方式。",
     points: ["交通距離", "房型需求", "設施條件", "附近景點", "常見問題"],
   },
   {
     title: "用問答格式回應搜尋意圖",
     description:
-      "使用者搜尋北車住宿時常用問句，本網站用可見 FAQ 搭配一致的 FAQPage schema，讓內容更容易被引用與核對。",
+      "使用者搜尋北車住宿時常用問句，本網站用清楚問答整理常見需求，讓讀者更快找到可操作的住宿選擇方向。",
     points: ["真實查詢語氣", "可見內容一致", "避免關鍵字堆疊", "清楚內部連結"],
   },
 ];

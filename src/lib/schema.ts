@@ -93,7 +93,7 @@ export function creativeWorkJsonLd(path = "/") {
     inLanguage: "zh-Hant",
     description: siteConfig.description,
     about: "台北車站住宿選擇、交通、房型、設施、景點與 FAQ 整理",
-    educationalUse: "GEO / AEO content structure example",
+    educationalUse: "Travel planning reference",
   };
 }
 

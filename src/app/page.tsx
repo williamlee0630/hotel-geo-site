@@ -31,7 +31,7 @@ const jsonLd = [
   aboutPageJsonLd(
     "/",
     "台北車站住宿推薦指南",
-    "以台北車站住宿情境為主題的 GEO / AEO 內容結構實驗網站。"
+    "整理台北車站附近住宿選擇條件、旅客類型與常見問題的住宿指南。"
   ),
   breadcrumbJsonLd([{ name: "首頁", path: "/" }]),
 ];
@@ -185,7 +185,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold tracking-normal">關於本網站</h2>
             <p className="mt-3 max-w-4xl text-base leading-8 text-zinc-700">
               {siteConfig.siteName}
-              是以台北車站住宿情境為主題的 GEO / AEO 內容結構實驗網站，重點在於整理住宿選擇條件、旅客類型與常見問答，幫助搜尋引擎與 AI 摘要理解「台北車站住宿怎麼選」。
+              以台北車站住宿情境為主題，整理住宿選擇條件、旅客類型與常見問答，幫助讀者判斷「台北車站住宿怎麼選」。
             </p>
           </section>
 
