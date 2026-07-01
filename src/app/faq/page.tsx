@@ -1,58 +1,57 @@
 import type { Metadata } from "next";
+import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { SummaryBox } from "@/components/SummaryBox";
 import { faqItems, pageLinks } from "@/data/site";
+import { breadcrumbJsonLd, faqJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "常見問題 FAQ",
+  title: "台北車站住宿常見問題｜北車飯店怎麼選 FAQ",
   description:
-    "晴川行館 FAQ，回答距離台北車站多遠、停車、親子入住、行李寄放、入住退房、早餐、商務與機場交通等問題。",
+    "整理台北車站附近住宿常見問題，包含第一次來台北、親子住宿、商務住宿、去西門町、交通距離與平價住宿取捨。",
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+const jsonLd = [
+  faqJsonLd(faqItems),
+  breadcrumbJsonLd([
+    { name: "首頁", path: "/" },
+    { name: "台北車站住宿常見問題", path: "/faq" },
+  ]),
+];
 
 export default function FaqPage() {
   return (
     <>
-      <JsonLd data={faqJsonLd} />
+      <JsonLd data={jsonLd} />
       <PageHeader
         eyebrow="FAQ"
-        title="常見問題"
-        description="這是本 Demo 網站的 GEO 重點頁，使用旅客真的會搜尋的問句整理答案，讓搜尋引擎與 AI 摘要更容易擷取重點。"
+        title="台北車站住宿常見問題"
+        description="以使用者實際查詢語氣整理北車住宿 FAQ，回答第一次來台北、親子、商務、交通、景點與預算取捨等問題。"
       />
       <div className="mx-auto max-w-7xl px-5 py-12 md:px-8">
         <SummaryBox>
           <p>
-            本頁整理晴川行館 Demo 飯店的常見問題，涵蓋台北車站距離、停車、親子入住、行李寄放、早餐、商務需求、桃園機場交通與晚間用餐便利性。內容為示範用途，不代表真實服務承諾。
+            選台北車站附近住宿時，最常見的疑問不是只有「哪一家最好」，而是「我的行程適不適合住北車」、「交通要多近才夠」、「親子或商務需求該看哪些條件」。
           </p>
         </SummaryBox>
 
-        <section className="mt-12 space-y-4">
-          <h2 className="text-3xl font-semibold tracking-normal">FAQ 問答列表</h2>
-          {faqItems.map((item) => (
-            <article key={item.question} className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold tracking-normal text-zinc-950">
-                {item.question}
-              </h3>
-              <p className="mt-3 text-base leading-8 text-zinc-700">{item.answer}</p>
-            </article>
-          ))}
-        </section>
+        <FaqList items={faqItems} />
 
-        <RelatedLinks links={pageLinks.filter((link) => link.href !== "/faq")} />
+        <RelatedLinks
+          links={pageLinks.filter((link) =>
+            [
+              "/taipei-main-station-hotels",
+              "/taipei-main-station-family-hotels",
+              "/taipei-main-station-business-hotels",
+              "/taipei-main-station-transportation-hotels",
+              "/taipei-main-station-budget-hotels",
+              "/location",
+              "/nearby",
+            ].includes(link.href)
+          )}
+        />
       </div>
     </>
   );

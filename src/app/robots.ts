@@ -2,9 +2,6 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const sitemapUrl = `${siteConfig.baseUrl}/sitemap.xml`;
-  const host = new URL(siteConfig.baseUrl).host;
-
   return {
     rules: [
       {
@@ -12,15 +9,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
       {
-        userAgent: ["Googlebot", "Bingbot", "Applebot"],
+        userAgent: "GPTBot",
         allow: "/",
       },
       {
-        userAgent: ["GPTBot", "ChatGPT-User", "PerplexityBot", "ClaudeBot"],
+        userAgent: "OAI-SearchBot",
         allow: "/",
       },
     ],
-    sitemap: sitemapUrl,
-    host,
+    sitemap: `${siteConfig.baseUrl}/sitemap.xml`,
   };
 }

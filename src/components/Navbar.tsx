@@ -7,13 +7,13 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 md:px-8 lg:flex-row lg:items-center lg:justify-between">
         <Link className="flex items-center gap-3" href="/">
           <span className="flex h-10 w-10 items-center justify-center rounded-md bg-teal-900 text-sm font-semibold text-white">
-            晴
+            北車
           </span>
           <span>
             <span className="block text-lg font-semibold tracking-normal text-zinc-950">
-              {siteConfig.hotelName}
+              {siteConfig.brandName}
             </span>
-            <span className="block text-xs text-zinc-500">Demo Hotel Website</span>
+            <span className="block text-xs text-zinc-500">{siteConfig.guideName}</span>
           </span>
         </Link>
 

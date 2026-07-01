@@ -7,12 +7,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: {
-    default: `${siteConfig.hotelName} | 台北車站附近 Demo 飯店網站`,
-    template: `%s | ${siteConfig.hotelName}`,
+    default: "台北車站住宿推薦指南｜北車飯店怎麼選",
+    template: `%s | ${siteConfig.guideName}`,
   },
   description: siteConfig.description,
   openGraph: {
-    title: `${siteConfig.hotelName} | 台北車站附近 Demo 飯店網站`,
+    title: "台北車站住宿推薦指南｜北車飯店怎麼選",
     description: siteConfig.description,
     url: siteConfig.baseUrl,
     siteName: siteConfig.siteName,

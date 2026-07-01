@@ -7,31 +7,31 @@ import { pageLinks, siteConfig } from "@/data/site";
 import { articleJsonLd, breadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "網站使用說明｜台北車站住宿指南",
+  title: "資料來源與網站說明｜台北車站住宿指南",
   description:
-    "說明本網站作為台北車站住宿指南型內容站的使用範圍、透明標示與不提供真實訂房服務的原則。",
+    "說明本網站為台北車站住宿指南型內容站，用於 GEO / AEO 研究與教學展示，不提供真實訂房、價格、電話、地址或評論。",
 };
 
-const title = "網站使用說明";
+const title = "資料來源與網站說明";
 const description =
-  "本站提供住宿選擇條件整理，不提供真實訂房、價格、電話、地址或評論。";
+  "本網站為台北車站住宿指南型內容站，用於 GEO / AEO 研究與教學展示，不提供真實商家資料。";
 
 const jsonLd = [
-  articleJsonLd({ path: "/policies", title, description }),
+  articleJsonLd({ path: "/data-source", title, description }),
   breadcrumbJsonLd([
     { name: "首頁", path: "/" },
-    { name: title, path: "/policies" },
+    { name: "資料來源與網站說明", path: "/data-source" },
   ]),
 ];
 
-export default function PoliciesPage() {
+export default function DataSourcePage() {
   return (
     <>
       <JsonLd data={jsonLd} />
       <PageHeader
-        eyebrow="Site Policy"
+        eyebrow="Data Source"
         title={title}
-        description="這裡集中說明本網站的使用範圍與透明標示，避免把指南型內容誤解為實際營業飯店資訊。"
+        description="這頁集中說明本站資料用途、透明標示與不提供真實訂房資訊的原則。"
       />
       <div className="mx-auto max-w-7xl px-5 py-12 md:px-8">
         <SummaryBox>
@@ -41,24 +41,24 @@ export default function PoliciesPage() {
         <section className="mt-12 grid gap-5 md:grid-cols-2">
           {[
             {
-              title: "內容用途",
+              title: "網站內容定位",
               description:
-                "本站用於整理台北車站住宿選擇條件，示範指南型內容如何支援 SEO、GEO 與 AEO 結構。",
+                "本網站為台北車站住宿指南型內容站，整理住宿選擇條件與常見問題，而不是實際營業飯店官網。",
             },
             {
-              title: "不提供訂房服務",
+              title: "研究與展示用途",
               description:
-                "本站沒有真實房價、訂房連結、電話、地址、Google 評論、星級或旅客見證。",
+                "網站內容用於 GEO / AEO 研究與教學展示，示範如何用清楚的內容結構協助搜尋與 AI 摘要理解。",
             },
             {
-              title: "資訊判斷方式",
+              title: "不提供的資訊",
               description:
-                "內容以旅客類型、交通、房型、設施、景點與 FAQ 來說明住宿選擇邏輯，而非推薦特定可入住商家。",
+                "本站不提供真實訂房、價格、電話、地址、Google 評論、星級評分、旅客見證或可入住服務。",
             },
             {
-              title: "商業網站需求",
+              title: "真實商業網站需要補充",
               description:
-                "若改為真實商業網站，應補足合法商家資訊、隱私權政策、訂房條款與可驗證評論來源。",
+                "若作為真實商業網站，需補上合法商家資訊、真實地址、聯絡方式、訂房條款、隱私權政策與可驗證評論來源。",
             },
           ].map((item) => (
             <article
@@ -77,7 +77,7 @@ export default function PoliciesPage() {
 
         <RelatedLinks
           links={pageLinks.filter((link) =>
-            ["/data-source", "/methodology", "/about", "/taipei-main-station-hotels"].includes(
+            ["/methodology", "/about", "/taipei-main-station-hotels", "/faq"].includes(
               link.href
             )
           )}
