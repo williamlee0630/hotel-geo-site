@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HotelRecommender } from "@/components/HotelRecommender";
 import { JsonLd } from "@/components/JsonLd";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { SummaryBox } from "@/components/SummaryBox";
@@ -88,6 +89,8 @@ export default function HomePage() {
               ))}
             </ul>
           </SummaryBox>
+
+          <HotelRecommender />
 
           <section className="mt-12">
             <h2 className="text-3xl font-semibold tracking-normal text-zinc-950">

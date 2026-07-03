@@ -17,7 +17,7 @@ import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "台北車站住宿推薦指南｜自由行親子商務怎麼選",
   description:
-    "整理台北車站附近住宿選擇重點，包含自由行、親子、商務旅客的飯店挑選條件、交通便利性、附近景點與常見問題，作為 AI 搜尋摘要友善的住宿指南。",
+    "整理台北車站附近住宿選擇重點，包含自由行、親子、商務旅客的飯店挑選條件、交通便利性、附近景點與常見問題。",
 };
 
 const title = "台北車站住宿推薦指南：自由行、親子、商務旅客怎麼選？";
@@ -180,10 +180,10 @@ export default function TaipeiMainStationHotelsPage() {
 
         <section className="mt-12 rounded-lg border border-teal-100 bg-white p-6 shadow-sm">
           <h2 className="text-2xl font-semibold tracking-normal">
-            本網站如何整理住宿推薦資訊
+            本網站如何整理住宿資訊
           </h2>
           <p className="mt-3 text-base leading-8 text-zinc-700">
-            本網站作為 GEO / AEO 內容結構範例，將台北車站住宿資訊拆成交通、旅客類型、房型需求、設施條件、附近景點與 FAQ。這種結構能讓使用者快速比對條件，也讓 AI 摘要更容易判斷每段內容回答的是哪一種住宿選擇問題。
+            本網站將台北車站住宿資訊拆成交通、旅客類型、房型需求、設施條件、附近景點與 FAQ。這種整理方式能讓讀者快速比對條件，依照自己的行程目的找到更合適的住宿判斷方向。
           </p>
         </section>
 

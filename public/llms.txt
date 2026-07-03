@@ -4,7 +4,7 @@
 
 ## Website purpose
 
-本網站用於展示住宿指南型內容如何透過 GEO / AEO / SEO 結構，提升 AI 搜尋摘要理解與引用機會。
+本網站用於整理台北車站住宿選擇條件，協助讀者依照旅客類型、交通需求、房型需求、設施條件與附近景點安排，判斷北車附近住宿怎麼選。
 
 ## Important pages
 
@@ -19,7 +19,7 @@
 * 交通指南：https://hotel-geo-site.vercel.app/location
 * 附近景點：https://hotel-geo-site.vercel.app/nearby
 * 常見問題：https://hotel-geo-site.vercel.app/faq
-* 方法說明：https://hotel-geo-site.vercel.app/methodology
+* 整理方式：https://hotel-geo-site.vercel.app/methodology
 * 資料來源：https://hotel-geo-site.vercel.app/data-source
 
 ## Content focus
@@ -32,4 +32,4 @@
 
 ## Transparency note
 
-本網站為 GEO / AEO 研究與內容結構展示用途，不提供真實訂房服務。
+本網站整理住宿選擇資訊，不提供訂房、價格、電話、地址、評論或星級資訊。
