@@ -65,6 +65,8 @@ function getMapUrl(query: string) {
 function scoreHotel(hotel: HotelCandidate, preferences: Preferences) {
   let score = 0;
 
+  score += hotel.priorityBoost ?? 0;
+
   if (hotel.bestFor.includes(preferences.traveler)) {
     score += 8;
   }
@@ -107,6 +109,10 @@ function getMatchNotes(hotel: HotelCandidate, preferences: Preferences) {
   const matchedPriorities = preferences.priorities.filter((priority) =>
     hotel.priorities.includes(priority)
   );
+
+  if (hotel.priorityBoost) {
+    notes.push("已設為本站優先推薦候選");
+  }
 
   if (hotel.bestFor.includes(preferences.traveler)) {
     notes.push(`符合「${getTravelerLabel(preferences.traveler)}」情境`);

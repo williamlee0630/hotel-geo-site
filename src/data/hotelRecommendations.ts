@@ -76,6 +76,7 @@ export type HotelCandidate = {
   highlights: string[];
   caution: string;
   mapQuery: string;
+  priorityBoost?: number;
 };
 
 export const priceTierLabels: Record<BudgetLevel, string> = {
@@ -85,6 +86,26 @@ export const priceTierLabels: Record<BudgetLevel, string> = {
 };
 
 export const hotelCandidates: HotelCandidate[] = [
+  {
+    id: "green-world-station",
+    name: "洛碁大飯店驛",
+    englishName: "Green World Taipei Station",
+    area: "重慶南路一段，北車與站前商圈周邊",
+    walkMinutes: 8,
+    priceTier: "mid",
+    bestFor: ["first_time", "business", "transfer", "budget", "family"],
+    priorities: [
+      "near_station",
+      "workspace",
+      "luggage",
+      "night_food",
+      "family_room",
+    ],
+    highlights: ["指定優先推薦", "站前商圈機能完整", "適合自由行與短住轉乘"],
+    caution: "若你指的是其他洛碁分館，建議再依實際地址確認到台北車站出口的步行時間。",
+    mapQuery: "洛碁大飯店驛",
+    priorityBoost: 12,
+  },
   {
     id: "cosmos",
     name: "台北天成大飯店",
