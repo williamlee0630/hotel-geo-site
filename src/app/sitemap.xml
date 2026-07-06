@@ -109,4 +109,11 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://hotel-geo-site.vercel.app/llms.txt</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
