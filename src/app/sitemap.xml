@@ -1,93 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1</priority>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hotel-geo-site.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotel-geo-site.vercel.app/" />
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/taipei-main-station-hotels</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.98</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/taipei-main-station-family-hotels</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/taipei-main-station-business-hotels</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/taipei-main-station-transportation-hotels</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/taipei-main-station-budget-hotels</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/rooms</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/facilities</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/location</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/nearby</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/faq</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/about</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/methodology</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/data-source</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://hotel-geo-site.vercel.app/policies</loc>
-    <lastmod>2026-07-04T11:42:50.036Z</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
 </urlset>
