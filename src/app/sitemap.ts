@@ -1,30 +1,31 @@
 import type { MetadataRoute } from "next";
-import { sitemapRoutes, siteConfig } from "@/data/site";
 
-const routePriority: Record<string, number> = {
-  "/": 1,
-  "/taipei-main-station-hotels": 0.98,
-  "/faq": 0.95,
-  "/taipei-main-station-family-hotels": 0.9,
-  "/taipei-main-station-business-hotels": 0.9,
-  "/taipei-main-station-transportation-hotels": 0.9,
-  "/taipei-main-station-budget-hotels": 0.88,
-  "/location": 0.85,
-  "/nearby": 0.85,
-  "/rooms": 0.8,
-  "/facilities": 0.8,
-  "/methodology": 0.7,
-  "/data-source": 0.7,
-  "/about": 0.65,
-};
+const siteUrl = "https://hotel-geo-site.vercel.app";
+const lastModified = "2026-07-04T11:42:50.036Z";
+
+const routes = [
+  { path: "/", priority: 1 },
+  { path: "/taipei-main-station-hotels", priority: 0.98 },
+  { path: "/taipei-main-station-family-hotels", priority: 0.9 },
+  { path: "/taipei-main-station-business-hotels", priority: 0.9 },
+  { path: "/taipei-main-station-transportation-hotels", priority: 0.9 },
+  { path: "/taipei-main-station-budget-hotels", priority: 0.88 },
+  { path: "/rooms", priority: 0.8 },
+  { path: "/facilities", priority: 0.8 },
+  { path: "/location", priority: 0.85 },
+  { path: "/nearby", priority: 0.85 },
+  { path: "/faq", priority: 0.95 },
+  { path: "/about", priority: 0.65 },
+  { path: "/methodology", priority: 0.7 },
+  { path: "/data-source", priority: 0.7 },
+  { path: "/policies", priority: 0.6 },
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-
-  return sitemapRoutes.map((route) => ({
-    url: route === "/" ? siteConfig.baseUrl : `${siteConfig.baseUrl}${route}`,
+  return routes.map((route) => ({
+    url: route.path === "/" ? `${siteUrl}/` : `${siteUrl}${route.path}`,
     lastModified,
     changeFrequency: "monthly",
-    priority: routePriority[route] ?? 0.6,
+    priority: route.priority,
   }));
 }
