@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HotelRecommender } from "@/components/HotelRecommender";
 import { JsonLd } from "@/components/JsonLd";
+import { LiveInfoTicker } from "@/components/LiveInfoTicker";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { SummaryBox } from "@/components/SummaryBox";
+import { authorityInfoPath, liveInfoUpdates } from "@/data/authorityInfo";
 import {
   conditionLinks,
   faqItems,
@@ -79,6 +81,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <LiveInfoTicker href={authorityInfoPath} updates={liveInfoUpdates} />
 
       <section className="px-5 py-12 md:px-8">
         <div className="mx-auto max-w-7xl">

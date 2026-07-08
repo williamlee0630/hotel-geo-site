@@ -33,3 +33,49 @@ textarea {
   background: #fde68a;
   color: #18181b;
 }
+
+.live-info-ticker__track {
+  display: inline-block;
+  min-width: max-content;
+  animation: live-info-ticker-scroll 46s linear infinite;
+}
+
+.live-info-ticker__edge {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 2.5rem;
+}
+
+.live-info-ticker__edge--left {
+  left: 0;
+  background: linear-gradient(90deg, #115e59, transparent);
+}
+
+.live-info-ticker__edge--right {
+  right: 0;
+  background: linear-gradient(270deg, #115e59, transparent);
+}
+
+.group:hover .live-info-ticker__track,
+.group:focus-visible .live-info-ticker__track {
+  animation-play-state: paused;
+}
+
+@keyframes live-info-ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-info-ticker__track {
+    animation: none;
+  }
+}

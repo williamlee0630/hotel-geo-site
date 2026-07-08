@@ -108,6 +108,11 @@ export const footerLinks: LinkItem[] = [
     label: "資料來源",
     description: "資料來源與網站透明說明",
   },
+  {
+    href: "/authority-info",
+    label: "即時資訊來源",
+    description: "官方旅遊、交通與旅宿資訊查核入口",
+  },
 ];
 
 export const conditionLinks: LinkItem[] = [
@@ -150,6 +155,11 @@ export const pageLinks: LinkItem[] = [
     href: "/data-source",
     label: "資料來源與說明",
     description: "透明說明本站用途，以及真實商業網站需要補充的資料。",
+  },
+  {
+    href: "/authority-info",
+    label: "即時旅遊資訊來源",
+    description: "整理高權威官方網站入口，方便查核活動、交通與旅宿資訊。",
   },
 ];
 
@@ -528,5 +538,6 @@ export const sitemapRoutes = [
   "/about",
   "/methodology",
   "/data-source",
+  "/authority-info",
   "/policies",
 ];
