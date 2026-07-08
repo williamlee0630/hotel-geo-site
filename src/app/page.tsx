@@ -17,13 +17,17 @@ import {
   aboutPageJsonLd,
   breadcrumbJsonLd,
   creativeWorkJsonLd,
+  faqJsonLd,
   websiteJsonLd,
 } from "@/lib/schema";
 
+const homeTitle =
+  "台北車站住宿推薦指南｜北車飯店、交通便利、親子商務與平價住宿怎麼選";
+const faqPreview = faqItems.slice(0, 5);
+
 export const metadata: Metadata = {
-  title: "台北車站住宿推薦指南｜北車飯店怎麼選",
-  description:
-    "整理自由行、親子與商務旅客選擇台北車站附近住宿時，需要注意的交通、房型、設施、景點與常見問題。",
+  title: homeTitle,
+  description: siteConfig.description,
 };
 
 const jsonLd = [
@@ -31,13 +35,12 @@ const jsonLd = [
   creativeWorkJsonLd("/"),
   aboutPageJsonLd(
     "/",
-    "台北車站住宿推薦指南",
-    "整理台北車站附近住宿選擇條件、旅客類型與常見問題的住宿指南。"
+    homeTitle,
+    siteConfig.description
   ),
+  faqJsonLd(faqPreview),
   breadcrumbJsonLd([{ name: "首頁", path: "/" }]),
 ];
-
-const faqPreview = faqItems.slice(0, 5);
 
 export default function HomePage() {
   return (

@@ -6,16 +6,18 @@ import { siteConfig } from "@/data/site";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-6T2H3V3DMX";
+const defaultTitle =
+  "台北車站住宿推薦指南｜北車飯店、交通便利、親子商務與平價住宿怎麼選";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: {
-    default: "台北車站住宿推薦指南｜北車飯店怎麼選",
+    default: defaultTitle,
     template: `%s | ${siteConfig.guideName}`,
   },
   description: siteConfig.description,
   openGraph: {
-    title: "台北車站住宿推薦指南｜北車飯店怎麼選",
+    title: defaultTitle,
     description: siteConfig.description,
     url: siteConfig.baseUrl,
     siteName: siteConfig.siteName,

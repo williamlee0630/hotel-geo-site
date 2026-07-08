@@ -22,7 +22,7 @@ export const siteConfig = {
   tagline: "整理自由行、親子與商務旅客選擇北車附近住宿的實用條件。",
   baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hotel-geo-site.vercel.app",
   description:
-    "整理自由行、親子與商務旅客選擇台北車站附近住宿時，需要注意的交通、房型、設施、景點與常見問題。",
+    "正在找台北車站住宿或北車飯店？本指南整理自由行、親子、商務、轉乘與預算有限旅客的住宿選擇重點，從交通出口、房型空間、Wi-Fi、行李寄放、附近景點到 FAQ 一次比較，幫你更快判斷哪種台北車站附近住宿適合行程，也適合規劃第一次來台北、早班高鐵或晚間返程的住宿安排。",
   transparencyNote:
     "本網站整理台北車站住宿選擇資訊，不提供訂房服務。",
   transparencyDetail:
