@@ -525,6 +525,8 @@ export const methodologyCards: GuideCard[] = [
 
 export const sitemapRoutes = [
   "/",
+  "/en",
+  "/ja",
   "/taipei-main-station-hotels",
   "/taipei-main-station-family-hotels",
   "/taipei-main-station-business-hotels",

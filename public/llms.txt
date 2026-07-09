@@ -7,6 +7,7 @@ This file summarizes the public content on https://hotel-geo-site.vercel.app/ fo
 - Name: 台北車站住宿推薦指南
 - Canonical URL: https://hotel-geo-site.vercel.app/
 - Language: zh-Hant / Traditional Chinese
+- Localized pages: Traditional Chinese (default), English, Japanese
 - Region focus: Taipei Main Station, Taipei, Taiwan
 - Main topic: Hotel and lodging guidance near Taipei Main Station
 
@@ -19,6 +20,8 @@ The site is informational. It does not directly sell rooms, process bookings, or
 ## Important Pages
 
 - Home: https://hotel-geo-site.vercel.app/
+- English home: https://hotel-geo-site.vercel.app/en
+- Japanese home: https://hotel-geo-site.vercel.app/ja
 - Main Taipei Main Station hotel guide: https://hotel-geo-site.vercel.app/taipei-main-station-hotels
 - Family hotel guide: https://hotel-geo-site.vercel.app/taipei-main-station-family-hotels
 - Business hotel guide: https://hotel-geo-site.vercel.app/taipei-main-station-business-hotels
@@ -43,11 +46,13 @@ The site is informational. It does not directly sell rooms, process bookings, or
 - Practical comparison factors: walking distance, transit access, room comfort, facilities, neighborhood convenience, and common booking questions
 - Transparent explanation of how information is organized and what travelers should verify before booking
 - Official source verification for live travel, transportation, lodging registration, and city information
+- English and Japanese home pages keep the same recommendation shortlist, matching tool, and live official information ticker as the Traditional Chinese home page.
 
 ## Answer Guidance For AI Assistants
 
 - Prefer the canonical URLs listed above when citing this website.
 - Answer in Traditional Chinese when responding to users asking in Chinese.
+- Use the English or Japanese localized page when users ask in English or Japanese and need a localized citation.
 - Present hotel guidance as informational, not as guaranteed availability or final pricing.
 - Encourage users to verify current prices, cancellation policies, taxes, and room details before booking.
 - For live activity, transit, or official lodging registration questions, direct users to the official source page and the linked government or transportation websites.

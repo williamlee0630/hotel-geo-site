@@ -150,3 +150,105 @@ export const liveInfoUpdates: LiveInfoUpdate[] = [
     url: "https://www.tymetro.com.tw/tymetro-new/tw/index.php",
   },
 ];
+
+export const liveInfoUpdatesEn: LiveInfoUpdate[] = [
+  {
+    source: "Taipei Travel",
+    title: "Official Taipei event calendar",
+    description: "Check official events before planning Ximending, Taipei Main Station, or city trips.",
+    url: "https://www.travel.taipei/en/event-calendar",
+  },
+  {
+    source: "Taipei City Government",
+    title: "City notices, traffic, and public service information",
+    description: "Use official city sources before departure.",
+    url: "https://english.gov.taipei/",
+  },
+  {
+    source: "Taiwan Tourism Administration",
+    title: "Taiwan travel news, events, and attractions",
+    description: "Useful for trips beyond Taipei.",
+    url: "https://eng.taiwan.net.tw/",
+  },
+  {
+    source: "TaiwanStay",
+    title: "Registered lodging lookup",
+    description: "Cross-check legal lodging registration before booking.",
+    url: "https://taiwanstay.net.tw/",
+  },
+  {
+    source: "Taipei Metro",
+    title: "Metro operations and route information",
+    description: "Check city transit details for stays near Taipei Main Station.",
+    url: "https://english.metro.taipei/",
+  },
+  {
+    source: "Taiwan High Speed Rail",
+    title: "HSR schedules, tickets, and operation notices",
+    description: "Check before early trains or intercity trips.",
+    url: "https://en.thsrc.com.tw/",
+  },
+  {
+    source: "Taiwan Railways",
+    title: "TRA schedules, tickets, and service notices",
+    description: "Useful for rail connections from Taipei Main Station.",
+    url: "https://www.railway.gov.tw/tra-tip-web/tip?lang=EN_US",
+  },
+  {
+    source: "Taoyuan Metro",
+    title: "Airport MRT operations, fares, and timetables",
+    description: "Check airport connections to and from Taipei Main Station.",
+    url: "https://www.tymetro.com.tw/tymetro-new/en/index.php",
+  },
+];
+
+export const liveInfoUpdatesJa: LiveInfoUpdate[] = [
+  {
+    source: "台北観光サイト",
+    title: "台北イベントカレンダー",
+    description: "西門町、台北駅、市内観光の前に公式イベント情報を確認できます。",
+    url: "https://www.travel.taipei/ja/event-calendar",
+  },
+  {
+    source: "台北市政府",
+    title: "市政公告、交通、公共サービス情報",
+    description: "出発前に台北市の公式情報を確認できます。",
+    url: "https://www.gov.taipei/",
+  },
+  {
+    source: "交通部観光署",
+    title: "台湾観光ニュース、イベント、観光地情報",
+    description: "台北以外の旅行計画にも使えます。",
+    url: "https://jp.taiwan.net.tw/",
+  },
+  {
+    source: "台湾旅宿網",
+    title: "合法旅宿登録の確認",
+    description: "予約前に宿泊施設の登録情報を確認できます。",
+    url: "https://taiwanstay.net.tw/",
+  },
+  {
+    source: "台北メトロ",
+    title: "MRT運行公告と路線情報",
+    description: "台北駅周辺に泊まる際の市内移動確認に便利です。",
+    url: "https://www.metro.taipei/",
+  },
+  {
+    source: "台湾高速鉄道",
+    title: "高鉄の時刻、チケット、運行公告",
+    description: "早朝便や都市間移動の前に確認できます。",
+    url: "https://en.thsrc.com.tw/",
+  },
+  {
+    source: "台湾鉄道",
+    title: "台鉄の時刻、チケット、運行公告",
+    description: "台北駅から各地へ移動する際に便利です。",
+    url: "https://www.railway.gov.tw/tra-tip-web/tip",
+  },
+  {
+    source: "桃園メトロ",
+    title: "空港MRTの運行、運賃、時刻表",
+    description: "桃園空港と台北駅の移動前に確認できます。",
+    url: "https://www.tymetro.com.tw/tymetro-new/jp/index.php",
+  },
+];

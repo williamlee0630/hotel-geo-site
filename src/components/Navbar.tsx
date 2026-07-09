@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { localeLabels, localePaths } from "@/data/locales";
 import { navLinks, siteConfig } from "@/data/site";
 
 export function Navbar() {
@@ -17,17 +18,31 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav aria-label="主要導覽" className="flex flex-wrap gap-2 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              className="rounded-md px-3 py-2 text-zinc-700 transition hover:bg-zinc-100 hover:text-teal-800"
-              href={link.href}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex flex-col gap-3 lg:items-end">
+          <nav aria-label="主要導覽" className="flex flex-wrap gap-2 text-sm font-medium">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                className="rounded-md px-3 py-2 text-zinc-700 transition hover:bg-zinc-100 hover:text-teal-800"
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <nav aria-label="Language" className="flex flex-wrap gap-2 text-xs font-semibold">
+            {Object.entries(localePaths).map(([locale, href]) => (
+              <Link
+                className="rounded-md border border-zinc-200 px-2.5 py-1 text-zinc-600 transition hover:border-teal-700 hover:text-teal-800"
+                href={href}
+                hrefLang={locale === "zh" ? "zh-Hant" : locale}
+                key={locale}
+              >
+                {localeLabels[locale as keyof typeof localeLabels]}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );

@@ -1,107 +1,89 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { HotelRecommender } from "@/components/HotelRecommender";
 import { HotelRecommendationList } from "@/components/HotelRecommendationList";
-import { JsonLd } from "@/components/JsonLd";
 import { LiveInfoTicker } from "@/components/LiveInfoTicker";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { SummaryBox } from "@/components/SummaryBox";
-import { authorityInfoPath, liveInfoUpdates } from "@/data/authorityInfo";
-import { hotelCandidates } from "@/data/hotelRecommendations";
 import {
-  conditionLinks,
-  faqItems,
-  homeSummaryPoints,
-  pageLinks,
-  selectionPoints,
-  siteConfig,
-  travelerGuideLinks,
-} from "@/data/site";
-import {
-  aboutPageJsonLd,
-  breadcrumbJsonLd,
-  creativeWorkJsonLd,
-  faqJsonLd,
-  hotelRecommendationItemListJsonLd,
-  websiteJsonLd,
-} from "@/lib/schema";
+  authorityInfoPath,
+  liveInfoUpdatesEn,
+  liveInfoUpdatesJa,
+} from "@/data/authorityInfo";
+import type { LocalizedHomeContent } from "@/data/localizedHome";
+import { localeLabels, localePaths } from "@/data/locales";
 
-const homeTitle =
-  "台北車站住宿推薦指南｜北車飯店、交通便利、親子商務與平價住宿怎麼選";
-const faqPreview = faqItems.slice(0, 5);
-
-export const metadata: Metadata = {
-  title: homeTitle,
-  description: siteConfig.description,
-  alternates: {
-    canonical: "/",
-    languages: {
-      "zh-Hant": "/",
-      en: "/en",
-      ja: "/ja",
-    },
-  },
+type LocalizedHomePageProps = {
+  content: LocalizedHomeContent;
 };
 
-const jsonLd = [
-  websiteJsonLd(),
-  creativeWorkJsonLd("/"),
-  aboutPageJsonLd(
-    "/",
-    homeTitle,
-    siteConfig.description
-  ),
-  faqJsonLd(faqPreview),
-  hotelRecommendationItemListJsonLd("/", hotelCandidates),
-  breadcrumbJsonLd([{ name: "首頁", path: "/" }]),
-];
+export function LocalizedHomePage({ content }: LocalizedHomePageProps) {
+  const updates = content.locale === "en" ? liveInfoUpdatesEn : liveInfoUpdatesJa;
 
-export default function HomePage() {
   return (
     <>
-      <JsonLd data={jsonLd} />
       <section
         className="relative flex min-h-[72svh] items-end bg-cover bg-center px-5 pb-14 pt-24 text-white md:px-8"
+        lang={content.htmlLang}
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(12, 28, 33, 0.88), rgba(12, 28, 33, 0.46)), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1800&q=80')",
         }}
       >
         <div className="mx-auto w-full max-w-7xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-200">
-            Taipei Main Station Stay Guide
+          <div className="flex flex-wrap gap-2">
+            {(["zh", "en", "ja"] as const).map((locale) => (
+              <Link
+                className={`rounded-md px-3 py-1.5 text-xs font-semibold transition ${
+                  locale === content.locale
+                    ? "bg-amber-300 text-zinc-950"
+                    : "bg-white/15 text-white hover:bg-white hover:text-zinc-950"
+                }`}
+                href={localePaths[locale]}
+                hrefLang={locale === "zh" ? "zh-Hant" : locale}
+                key={locale}
+              >
+                {localeLabels[locale]}
+              </Link>
+            ))}
+          </div>
+          <p className="mt-8 text-sm font-semibold uppercase tracking-[0.18em] text-amber-200">
+            {content.hero.eyebrow}
           </p>
           <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-normal md:text-7xl">
-            台北車站住宿推薦指南
+            {content.hero.title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-9 text-zinc-100 md:text-xl">
-            整理自由行、親子、商務旅客選擇北車附近住宿時，需要注意的交通、房型、設施、景點與 FAQ 資訊。
+            {content.hero.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               className="rounded-md bg-amber-300 px-5 py-3 text-center text-sm font-semibold text-zinc-950 transition hover:bg-amber-200"
-              href="/taipei-main-station-hotels"
+              href={`${content.path}#hotel-recommendation-list`}
             >
-              查看北車住宿怎麼選
+              {content.hero.primaryCta}
             </Link>
             <Link
               className="rounded-md border border-white/70 px-5 py-3 text-center text-sm font-semibold transition hover:bg-white hover:text-zinc-950"
-              href="/taipei-main-station-hotel-faq"
+              href={`${content.path}#localized-faq`}
             >
-              查看住宿常見問題
+              {content.hero.secondaryCta}
             </Link>
           </div>
         </div>
       </section>
 
-      <LiveInfoTicker href={authorityInfoPath} updates={liveInfoUpdates} />
+      <LiveInfoTicker
+        href={authorityInfoPath}
+        locale={content.locale}
+        updates={updates}
+      />
 
-      <section className="px-5 py-12 md:px-8">
+      <section className="px-5 py-12 md:px-8" lang={content.htmlLang}>
         <div className="mx-auto max-w-7xl">
-          <SummaryBox>
+          <SummaryBox title={content.summaryTitle}>
             <ul className="grid gap-2">
-              {homeSummaryPoints.map((point) => (
-                <li key={point} className="flex gap-3">
+              {content.summaryPoints.map((point) => (
+                <li className="flex gap-3" key={point}>
                   <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-teal-700" />
                   <span>{point}</span>
                 </li>
@@ -109,23 +91,23 @@ export default function HomePage() {
             </ul>
           </SummaryBox>
 
-          <HotelRecommendationList />
+          <HotelRecommendationList locale={content.locale} />
 
-          <HotelRecommender />
+          <HotelRecommender locale={content.locale} />
 
           <section className="mt-12">
             <h2 className="text-3xl font-semibold tracking-normal text-zinc-950">
-              依旅客類型選住宿
+              {content.travelerSection.title}
             </h2>
             <p className="mt-3 max-w-3xl text-base leading-8 text-zinc-700">
-              北車附近住宿沒有單一標準答案。自由行、親子、商務、轉乘與預算有限旅客，應優先檢查的條件不同。
+              {content.travelerSection.description}
             </p>
             <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {travelerGuideLinks.map((link) => (
+              {content.travelerSection.links.map((link) => (
                 <Link
-                  key={link.href}
                   className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition hover:border-teal-500"
                   href={link.href}
+                  key={link.label}
                 >
                   <h3 className="text-xl font-semibold tracking-normal text-zinc-950">
                     {link.label}
@@ -140,13 +122,13 @@ export default function HomePage() {
 
           <section className="mt-12">
             <h2 className="text-3xl font-semibold tracking-normal text-zinc-950">
-              台北車站住宿選擇的 5 個重點
+              {content.selectionSection.title}
             </h2>
             <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-              {selectionPoints.map((point) => (
+              {content.selectionSection.points.map((point) => (
                 <article
-                  key={point.title}
                   className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm"
+                  key={point.title}
                 >
                   <h3 className="text-xl font-semibold tracking-normal">
                     {point.title}
@@ -162,17 +144,17 @@ export default function HomePage() {
           <section className="mt-12 grid gap-5 lg:grid-cols-[1fr_1fr]">
             <div className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm">
               <h2 className="text-2xl font-semibold tracking-normal">
-                住宿條件快速查
+                {content.conditionSection.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-zinc-600">
-                如果你已經知道旅客類型，可以直接看分眾指南；如果還在比較條件，先從房型、設施、交通與附近景點開始。
+                {content.conditionSection.description}
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {conditionLinks.map((link) => (
+                {content.conditionSection.links.map((link) => (
                   <Link
                     className="rounded-md bg-zinc-50 px-4 py-3 text-sm font-semibold text-teal-900 transition hover:bg-teal-50"
                     href={link.href}
-                    key={link.href}
+                    key={link.label}
                   >
                     {link.label}
                   </Link>
@@ -180,12 +162,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm">
+            <div
+              className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm"
+              id="localized-faq"
+            >
               <h2 className="text-2xl font-semibold tracking-normal">
-                常見問題預覽
+                {content.faqSection.title}
               </h2>
               <div className="mt-5 space-y-4">
-                {faqPreview.map((item) => (
+                {content.faqSection.items.map((item) => (
                   <article key={item.question}>
                     <h3 className="text-base font-semibold text-zinc-950">
                       {item.question}
@@ -198,33 +183,23 @@ export default function HomePage() {
               </div>
               <Link
                 className="mt-5 inline-block text-sm font-semibold text-teal-800"
-                href="/faq"
+                href={`${content.path}#hotel-recommender`}
               >
-                查看完整住宿常見問題
+                {content.faqSection.linkLabel}
               </Link>
             </div>
           </section>
 
           <section className="mt-12 rounded-lg border border-teal-100 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold tracking-normal">關於本網站</h2>
+            <h2 className="text-2xl font-semibold tracking-normal">
+              {content.aboutSection.title}
+            </h2>
             <p className="mt-3 max-w-4xl text-base leading-8 text-zinc-700">
-              {siteConfig.siteName}
-              以台北車站住宿情境為主題，整理住宿選擇條件、旅客類型與常見問答，幫助讀者判斷「台北車站住宿怎麼選」。
+              {content.aboutSection.description}
             </p>
           </section>
 
-          <RelatedLinks
-            links={pageLinks.filter((link) =>
-              [
-                "/taipei-main-station-hotels",
-                "/taipei-main-station-family-hotels",
-                "/taipei-main-station-business-hotels",
-                "/taipei-main-station-transportation-hotels",
-                "/taipei-main-station-budget-hotels",
-                "/faq",
-              ].includes(link.href)
-            )}
-          />
+          <RelatedLinks title={content.relatedTitle} links={content.relatedLinks} />
         </div>
       </section>
     </>

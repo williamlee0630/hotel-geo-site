@@ -8,6 +8,30 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hotel-geo-site.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotel-geo-site.vercel.app/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hotel-geo-site.vercel.app/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotel-geo-site.vercel.app/" />
+  </url>
+
+  <url>
+    <loc>https://hotel-geo-site.vercel.app/en</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hotel-geo-site.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotel-geo-site.vercel.app/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hotel-geo-site.vercel.app/ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hotel-geo-site.vercel.app/" />
+  </url>
+
+  <url>
+    <loc>https://hotel-geo-site.vercel.app/ja</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hotel-geo-site.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://hotel-geo-site.vercel.app/en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hotel-geo-site.vercel.app/ja" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hotel-geo-site.vercel.app/" />
   </url>
 

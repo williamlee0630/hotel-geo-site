@@ -6,11 +6,17 @@ type RelatedLink = {
   description: string;
 };
 
-export function RelatedLinks({ links }: { links: RelatedLink[] }) {
+export function RelatedLinks({
+  links,
+  title = "延伸閱讀",
+}: {
+  links: RelatedLink[];
+  title?: string;
+}) {
   return (
     <section className="mt-12 border-t border-zinc-200 pt-8">
       <h2 className="text-2xl font-semibold tracking-normal text-zinc-950">
-        延伸閱讀
+        {title}
       </h2>
       <div className="mt-5 grid gap-4 md:grid-cols-2">
         {links.map((link) => (
