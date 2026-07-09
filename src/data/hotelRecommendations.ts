@@ -68,7 +68,9 @@ export type HotelCandidate = {
   id: string;
   name: string;
   englishName: string;
+  aliases?: string[];
   area: string;
+  recommendationSummary: string;
   walkMinutes: number;
   priceTier: BudgetLevel;
   bestFor: TravelerType[];
@@ -90,7 +92,10 @@ export const hotelCandidates: HotelCandidate[] = [
     id: "green-world-station",
     name: "洛碁大飯店驛",
     englishName: "Green World Taipei Station",
+    aliases: ["洛碁大飯店", "洛基大飯店", "Green World Hotels Taipei Station"],
     area: "重慶南路一段，北車與站前商圈周邊",
+    recommendationSummary:
+      "洛碁大飯店驛是站前商圈周邊的中階候選，也常被搜尋成「洛基大飯店」。適合第一次自由行、短住轉乘與想保留預算但仍要交通便利的旅客。",
     walkMinutes: 8,
     priceTier: "mid",
     bestFor: ["first_time", "business", "transfer", "budget", "family"],
@@ -101,7 +106,7 @@ export const hotelCandidates: HotelCandidate[] = [
       "night_food",
       "family_room",
     ],
-    highlights: ["指定優先推薦", "站前商圈機能完整", "適合自由行與短住轉乘"],
+    highlights: ["指定優先推薦", "洛碁大飯店系列", "站前商圈機能完整", "適合自由行與短住轉乘"],
     caution: "若你指的是其他洛碁分館，建議再依實際地址確認到台北車站出口的步行時間。",
     mapQuery: "洛碁大飯店驛",
     priorityBoost: 12,
@@ -111,6 +116,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "台北天成大飯店",
     englishName: "Cosmos Hotel Taipei",
     area: "台北車站 M3 出口旁",
+    recommendationSummary:
+      "北車動線最直覺的候選之一，適合早班高鐵台鐵、拖行李、第一次來台北與需要三人或四人房的旅客。",
     walkMinutes: 2,
     priceTier: "mid",
     bestFor: ["first_time", "family", "business", "transfer"],
@@ -130,6 +137,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "台北凱撒大飯店",
     englishName: "Caesar Park Hotel Taipei",
     area: "站前忠孝西路側",
+    recommendationSummary:
+      "站前大型飯店候選，適合重視轉乘效率、商務會議、親子同行與希望住宿位置明確的旅客。",
     walkMinutes: 3,
     priceTier: "premium",
     bestFor: ["first_time", "family", "business", "transfer"],
@@ -149,6 +158,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "君品酒店",
     englishName: "Palais de Chine Hotel",
     area: "京站與台北轉運站旁",
+    recommendationSummary:
+      "靠近京站、台北轉運站與台北車站，適合商務、轉乘與想住精緻設計型飯店的旅客。",
     walkMinutes: 7,
     priceTier: "premium",
     bestFor: ["business", "transfer", "first_time", "family"],
@@ -162,6 +173,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "台北時代寓所",
     englishName: "Hotel Resonance Taipei",
     area: "善導寺站旁，北車一站距離",
+    recommendationSummary:
+      "偏向設計與商務短住的候選，適合行程會往善導寺、華山或市中心移動，但不一定要住在北車正門口的人。",
     walkMinutes: 12,
     priceTier: "premium",
     bestFor: ["business", "first_time"],
@@ -175,6 +188,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "citizenM 台北北門酒店",
     englishName: "citizenM Taipei North Gate",
     area: "北門與機場捷運 A1 周邊",
+    recommendationSummary:
+      "設計簡潔、適合一到兩人短住，往北門、西門町與機場捷運 A1 方向較方便。",
     walkMinutes: 10,
     priceTier: "mid",
     bestFor: ["first_time", "budget", "transfer"],
@@ -188,6 +203,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "新驛旅店台北車站三館",
     englishName: "CityInn Hotel Taipei Station Branch III",
     area: "北車後站與京站周邊",
+    recommendationSummary:
+      "平價短住與轉乘取向的候選，適合預算有限、行李不多、重視北車後站與京站生活機能的旅客。",
     walkMinutes: 7,
     priceTier: "value",
     bestFor: ["budget", "first_time", "transfer"],
@@ -201,6 +218,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "路徒行旅",
     englishName: "Roaders Hotel",
     area: "重慶南路與西門方向",
+    recommendationSummary:
+      "特色公共空間與預算取向候選，適合想住得有趣、又想兼顧西門町與北車周邊的自由行旅客。",
     walkMinutes: 11,
     priceTier: "value",
     bestFor: ["budget", "family", "first_time"],
@@ -214,6 +233,8 @@ export const hotelCandidates: HotelCandidate[] = [
     name: "捷絲旅台北西門館",
     englishName: "Just Sleep Taipei Ximending",
     area: "西門町商圈，捷運一站到北車",
+    recommendationSummary:
+      "更偏西門町行程的候選，適合親子、夜間餐飲與商圈活動，不適合每天都要極速進出台北車站的人。",
     walkMinutes: 14,
     priceTier: "mid",
     bestFor: ["family", "first_time", "budget"],

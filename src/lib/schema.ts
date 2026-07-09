@@ -12,6 +12,14 @@ type ArticleSchemaInput = {
   description: string;
 };
 
+type HotelRecommendationSchemaInput = {
+  name: string;
+  englishName: string;
+  aliases?: string[];
+  area: string;
+  recommendationSummary: string;
+};
+
 export function absoluteUrl(path = "/") {
   if (path === "/") {
     return siteConfig.baseUrl;
@@ -69,6 +77,32 @@ export function articleJsonLd({ path, title, description }: ArticleSchemaInput) 
       "親子住宿",
       "商務住宿",
     ],
+  };
+}
+
+export function hotelRecommendationItemListJsonLd(
+  path: string,
+  hotels: HotelRecommendationSchemaInput[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "台北車站住宿推薦清單",
+    description:
+      "依交通便利、旅客情境、房型彈性、預算感受與周邊機能整理的台北車站住宿候選清單。",
+    url: absoluteUrl(path),
+    numberOfItems: hotels.length,
+    itemListElement: hotels.map((hotel, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Hotel",
+        name: hotel.name,
+        alternateName: [hotel.englishName, ...(hotel.aliases ?? [])],
+        description: hotel.recommendationSummary,
+        areaServed: hotel.area,
+      },
+    })),
   };
 }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaqList } from "@/components/FaqList";
+import { HotelRecommendationList } from "@/components/HotelRecommendationList";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHeader } from "@/components/PageHeader";
 import { RelatedLinks } from "@/components/RelatedLinks";
@@ -12,7 +13,13 @@ import {
   selectionPoints,
   travelerGuideLinks,
 } from "@/data/site";
-import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/schema";
+import { hotelCandidates } from "@/data/hotelRecommendations";
+import {
+  articleJsonLd,
+  breadcrumbJsonLd,
+  faqJsonLd,
+  hotelRecommendationItemListJsonLd,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "台北車站住宿推薦指南｜自由行親子商務怎麼選",
@@ -31,6 +38,10 @@ const jsonLd = [
     description,
   }),
   faqJsonLd(mainGuideFaq),
+  hotelRecommendationItemListJsonLd(
+    "/taipei-main-station-hotels",
+    hotelCandidates
+  ),
   breadcrumbJsonLd([
     { name: "首頁", path: "/" },
     { name: "台北車站住宿推薦指南", path: "/taipei-main-station-hotels" },
@@ -137,6 +148,8 @@ export default function TaipeiMainStationHotelsPage() {
             </article>
           ))}
         </section>
+
+        <HotelRecommendationList />
 
         <section className="mt-12">
           <h2 className="text-3xl font-semibold tracking-normal text-zinc-950">

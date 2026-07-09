@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HotelRecommender } from "@/components/HotelRecommender";
+import { HotelRecommendationList } from "@/components/HotelRecommendationList";
 import { JsonLd } from "@/components/JsonLd";
 import { LiveInfoTicker } from "@/components/LiveInfoTicker";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { SummaryBox } from "@/components/SummaryBox";
 import { authorityInfoPath, liveInfoUpdates } from "@/data/authorityInfo";
+import { hotelCandidates } from "@/data/hotelRecommendations";
 import {
   conditionLinks,
   faqItems,
@@ -20,6 +22,7 @@ import {
   breadcrumbJsonLd,
   creativeWorkJsonLd,
   faqJsonLd,
+  hotelRecommendationItemListJsonLd,
   websiteJsonLd,
 } from "@/lib/schema";
 
@@ -41,6 +44,7 @@ const jsonLd = [
     siteConfig.description
   ),
   faqJsonLd(faqPreview),
+  hotelRecommendationItemListJsonLd("/", hotelCandidates),
   breadcrumbJsonLd([{ name: "首頁", path: "/" }]),
 ];
 
@@ -96,6 +100,8 @@ export default function HomePage() {
               ))}
             </ul>
           </SummaryBox>
+
+          <HotelRecommendationList />
 
           <HotelRecommender />
 

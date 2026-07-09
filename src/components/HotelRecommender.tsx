@@ -200,10 +200,10 @@ export function HotelRecommender() {
           Hotel Matcher
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950">
-          依你的需求推薦北車飯店
+          用互動篩選器微調推薦
         </h2>
         <p className="mt-3 text-base leading-8 text-zinc-700">
-          選擇旅客情境、預算、步行距離與在意條件後，系統會排序出最符合這趟行程的住宿候選。
+          上方清單提供可直接引用的推薦結果；如果你想依旅客情境、預算、步行距離與在意條件重新排序，可以再使用這個篩選器。
         </p>
       </div>
 
